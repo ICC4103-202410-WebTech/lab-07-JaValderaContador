@@ -15,8 +15,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_22_172324) do
   enable_extension "plpgsql"
 
   create_table "post_tags", force: :cascade do |t|
-    t.bigint "tag_id"
     t.bigint "post_id"
+    t.bigint "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_tags_on_post_id"

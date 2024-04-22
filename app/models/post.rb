@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
     belongs_to :user
-    has_many :posts_tags
+    has_many :post_tags
     has_many :tags, through: :post_tags
     belongs_to :parent_post, class_name: "Post", optional: true
     has_many :child_post, class_name: "Post", foreign_key: "parent_post_id"
