@@ -11,7 +11,13 @@ Post.delete_all
 User.delete_all
 
 User.create!(
-    name: 'Esteban',
+    name: 'Esteban Garcia',
+    email: 'estebangarcia@estebangarcia.cl',
+    password: 'estebangarcia'
+)
+
+User.create!(
+    name: '',
     email: 'estebangarcia@estebangarcia.cl',
     password: 'estebangarcia'
 )
