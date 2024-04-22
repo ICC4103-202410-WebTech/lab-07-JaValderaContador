@@ -1,4 +1,10 @@
 class Post < ApplicationRecord
+    belongs_to :user
+    has_many :posts_tags
+    has_many :tags, through: :post_tags
+    has_many :posts
+    belongs_to :post
+
     validates :title, presence: {message: "Um... you're missing the title here"}
     validates :content, presence: {message: "Post with nothing... Really? C'mon I know you can do better"}
     validates :user_id, presence: {message: "And the user that made this?  Where did they go?"}
@@ -6,12 +12,6 @@ class Post < ApplicationRecord
     validates :likes_count, numericality: {greater_than_or_equal_to: 0, message: "Negative likes.. why? who damaged you?"}
     
     before_save  :set__default_pub
-
-    belongs_to :user
-    has_many :posts_tags
-    has_many :tags, through: :post_tags
-    has_many :posts
-    belongs_to :post
 
     before_validation :normalize_title
     before_validation :remove_whitespaces
