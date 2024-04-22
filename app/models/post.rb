@@ -13,9 +13,20 @@ class Post < ApplicationRecord
     has_many :posts
     belongs_to :post
 
+    before_validation :normalize_title
+    before_validation :remove_whitespaces
+
     private
 
     def set__default_pub
         self.published_at ||= Time.current
+    end
+
+    def normalize_title
+        self.title = title.downcase.titleize
+    end
+
+    def remove_whitespaces
+        self.title = name.strip
     end
 end

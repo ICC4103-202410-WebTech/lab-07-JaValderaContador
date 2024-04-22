@@ -9,3 +9,9 @@
 #   end
 Post.delete_all
 User.delete_all
+
+User.create!(
+    name: 'Esteban',
+    email: 'estebangarcia@estebangarcia.cl',
+    password: 'estebangarcia'
+)
