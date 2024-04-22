@@ -27,6 +27,6 @@ class Post < ApplicationRecord
     end
 
     def remove_whitespaces
-        self.title = name.strip
+        self.title = title.strip
     end
 end
