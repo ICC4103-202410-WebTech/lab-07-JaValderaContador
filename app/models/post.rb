@@ -2,8 +2,8 @@ class Post < ApplicationRecord
     belongs_to :user
     has_many :posts_tags
     has_many :tags, through: :post_tags
-    has_many :posts
-    belongs_to :post
+    belongs_to :parent_post, class_name: "Post", optional: true
+    has_many :child_post, class_name: "Post", foreign_key: "parent_post_id"
 
     validates :title, presence: {message: "Um... you're missing the title here"}
     validates :content, presence: {message: "Post with nothing... Really? C'mon I know you can do better"}
