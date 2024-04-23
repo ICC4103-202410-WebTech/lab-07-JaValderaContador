@@ -115,7 +115,7 @@ post_9 = Post.create!(
 post_10 = Post.create!(
     title: 'Sorry',
     content: 'Am sorry, my brain does not want to create more posts',
-    user_id: 2,
+    user_id: 3,
     answers_count: 816518,
     likes_count: 489465
 )
